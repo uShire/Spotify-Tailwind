@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .container{
+        @apply max-w-[130rem] p-[1.5rem] mx-auto;
+    }
+}
+
+@layer components{
+    .header{
+        @apply bg-dark relative
+    }
+    .header img{
+        @apply w-[8rem]
+    }
+    .header .toggle__menu span{
+        @apply w-[2rem] h-[.2rem] bg-light block rounded-full
+    }
+    .header .toggle__menu span:nth-child(2){
+        @apply my-[.2rem]
+    }
+    .header .header__nav span{
+        @apply w-[3rem] h-[.2rem] bg-light block
+    }
+    .header .header__nav ul li a{
+        @apply text-light
+    }
+    .header .header__wrapper{
+        @apply flex items-center justify-between 
+    }
+    .header .header__nav{
+        @apply bg-pink-700 absolute top-[5.4rem] right-[0] w-[95%] h-[100vh]
+    }
+}
+
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[1rem] px-[1.5rem] border-[1px] border-red-400
+    }
+}
