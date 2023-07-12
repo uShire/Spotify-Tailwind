@@ -2,42 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    .container{
-        @apply max-w-[130rem] p-[1.5rem] mx-auto;
-    }
+.container {
+  max-width: 130rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
 }
 
-@layer components{
-    .header{
-        @apply bg-dark relative
-    }
-    .header img{
-        @apply w-[8rem]
-    }
-    .header .toggle__menu span{
-        @apply w-[2rem] h-[.2rem] bg-light block rounded-full
-    }
-    .header .toggle__menu span:nth-child(2){
-        @apply my-[.2rem]
-    }
-    .header .header__nav span{
-        @apply w-[3rem] h-[.2rem] bg-light block
-    }
-    .header .header__nav ul li a{
-        @apply text-light
-    }
-    .header .header__wrapper{
-        @apply flex items-center justify-between 
-    }
-    .header .header__nav{
-        @apply bg-pink-700 absolute top-[5.4rem] right-[0] w-[95%] h-[100vh]
-    }
+@layer components {
+  /*-----HEADER------*/
+  .header {
+    @apply bg-dark fixed w-full;
+  }
+  .header .header__nav .dim {
+    @apply absolute  z-[5] w-[5vw] h-[100vh] bg-dark top-[0rem] right-[-100rem] opacity-[.4] transition-all;
+  }
+  .header .header__nav .dim.open {
+    @apply left-[-1.45rem] transition-all;
+  }
+  .header img {
+    @apply w-[8rem];
+  }
+  .header .toggle__menu {
+    @apply z-[999] lg:hidden;
+  }
+  .header .toggle__menu span {
+    @apply w-[2rem] h-[.2rem] bg-light block rounded-full
+    transition-all;
+  }
+  .header .toggle__menu span:nth-child(2) {
+    @apply my-[.2rem];
+  }
+  .header .toggle__menu.open span:first-child {
+    @apply transform translate-y-[10px] rotate-[225deg] transition-all;
+  }
+  .header .toggle__menu.open span:nth-child(2) {
+    @apply opacity-0 transition-all;
+  }
+  .header .toggle__menu.open span:last-child {
+    @apply transform translate-y-[-3.5px] rotate-[-225deg] transition-all;
+  }
+  .header .header__nav span {
+    @apply w-[1.5rem] h-[.2rem] bg-light block lg:rotate-[90deg] lg:mx-[1.5rem];
+  }
+  .header .header__nav ul li a {
+    @apply text-light;
+  }
+  .header .header__wrapper {
+    @apply flex items-center justify-between;
+  }
+  .header .header__nav {
+    @apply bg-dark absolute top-[0rem] right-[-100rem] w-[95vw] h-[100vh] transition-all
+    lg:static lg:w-fit lg:h-fit;
+  }
+  .header .header__nav.open {
+    @apply right-[0] transition-all;
+  }
+  .header .header__nav img {
+    @apply absolute bottom-[2.5rem] left-[2rem] lg:hidden;
+  }
+  .header .header__nav nav {
+    @apply pl-[2rem] lg:flex lg:items-center lg:pl-[0rem];
+  }
+  .header .header__nav nav ul {
+    @apply flex flex-col gap-[1rem] py-[2rem] lg:flex-row lg:gap-[2rem];
+  }
+  .header .header__nav nav ul li:hover a {
+    @apply text-primary;
+  }
+  .header .header__nav nav ul:first-child li a {
+    @apply text-[2rem] font-bold lg:text-[1rem];
+  }
+  .header .header__nav nav ul:last-child li a {
+    @apply text-[1.5rem] lg:text-[1rem] lg:font-bold;
+  }
+
+  /*-----FOOTER------*/
+  .footer {
+    @apply bg-dark py-[5rem];
+  }
+  .footer .footer__links {
+    @apply flex flex-col gap-[5rem] lg:grid lg:grid-cols-[_.5fr,_2fr,_2fr];
+  }
+  .footer .footer__links img {
+    @apply w-[6rem];
+  }
+  .footer .footer__drop {
+    @apply flex flex-col gap-[2rem] lg:flex-row lg:justify-between;
+  }
+  .footer .footer__item h4 {
+    @apply text-gray-400 text-[1rem] font-semibold flex items-center justify-between hover:cursor-pointer;
+  }
+  .footer .footer__item h4 i {
+    @apply transition-all p-[.5rem] rounded-[5rem] hover:bg-gray-600 lg:hidden;
+  }
+  .footer .footer__item h4 i.open {
+    @apply rotate-[180deg] transition-all;
+  }
+  .footer .footer__item ul {
+    @apply flex flex-col gap-[1rem] max-h-[0rem] overflow-hidden transition-all lg:max-h-[50rem] lg:py-[.8rem];
+  }
+  .footer .footer__item ul.open {
+    @apply max-h-[50rem] py-[.8rem] transition-all;
+  }
+  .footer .footer__item ul li a {
+    @apply text-light hover:text-primary;
+  }
+  .footer .footer__social ul {
+    @apply flex gap-[1rem] lg:justify-end;
+  }
+  .footer .footer__social ul li a {
+    @apply text-light text-[1rem] bg-gray-500 
+    py-[.8rem] px-[1rem] rounded-[5rem] hover:text-primary;
+  }
 }
 
-
-@layer utilities{
-    .btn{
-        @apply inline-block py-[1rem] px-[1.5rem] border-[1px] border-red-400
-    }
+@layer utilities {
+  .btn {
+    @apply inline-block py-[1rem] px-[1.5rem] border-[1px] border-red-400;
+  }
 }
