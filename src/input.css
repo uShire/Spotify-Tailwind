@@ -115,6 +115,35 @@
     @apply text-light text-[1rem] bg-gray-500 
     py-[.8rem] px-[1rem] rounded-[5rem] hover:text-primary;
   }
+
+/* -----FREE MOBILE APP------ */
+.play{
+  @apply  bg-gradient-to-r from-[#d72fb1] to-[#8d18d1] min-h-[550px] lg:min-h-[670px] 
+}
+.play .play__wrapper{
+  @apply bg-[url('./img/bubbles-dktp.svg')] bg-cover lg:bg-contain lg:bg-no-repeat
+}
+.play .play__content{
+  @apply lg:grid lg:grid-cols-[_1fr,_3fr]
+}
+.play .play__free{
+  @apply lg:flex lg:flex-col lg:items-end
+}
+.play .play__free h1{
+  @apply text-[2.6rem] text-light pt-[10rem] font-bold pb-[3rem] mr-[1rem] 
+  lg:pt-[13rem]  lg:ml-[20rem] lg:mr-[10rem] lg:text-[3.5rem] lg:font-[800] lg:pb-[2rem]
+}
+.play .play__free a{
+  @apply bg-light py-[.8rem] px-[2rem] font-bold rounded-[5rem] text-center 
+  lg:mr-[37rem] lg:font-semibold
+}
+.play .play__banner img{
+  @apply hidden lg:block lg:w-[20rem] 
+}
+/* ----WHY SPOTIFY----- */
+.why .why__title{
+  @apply text-center text-[1.8rem] font-bold pb-[2rem]
+}
 }
 
 @layer utilities {
