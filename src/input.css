@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  max-width: 130rem;
+  max-width: 120rem;
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
@@ -12,7 +12,7 @@
 @layer components {
   /*-----HEADER------*/
   .header {
-    @apply bg-dark fixed w-full;
+    @apply bg-dark fixed w-full z-[999];
   }
   .header .header__nav .dim {
     @apply absolute  z-[5] w-[5vw] h-[100vh] bg-dark top-[0rem] right-[-100rem] opacity-[.4] transition-all;
@@ -118,31 +118,151 @@
 
 /* -----FREE MOBILE APP------ */
 .play{
-  @apply  bg-gradient-to-r from-[#d72fb1] to-[#8d18d1] min-h-[550px] lg:min-h-[670px] 
+  @apply  bg-gradient-to-r from-[#d72fb1] to-[#8d18d1] min-h-[550px] lg:min-h-[670px] lg:relative
 }
 .play .play__wrapper{
   @apply bg-[url('./img/bubbles-dktp.svg')] bg-cover lg:bg-contain lg:bg-no-repeat
 }
 .play .play__content{
-  @apply lg:grid lg:grid-cols-[_1fr,_3fr]
+  @apply lg:grid lg:grid-cols-[_1fr,_3fr] 
 }
 .play .play__free{
   @apply lg:flex lg:flex-col lg:items-end
 }
 .play .play__free h1{
   @apply text-[2.6rem] text-light pt-[10rem] font-bold pb-[3rem] mr-[1rem] 
-  lg:pt-[13rem]  lg:ml-[20rem] lg:mr-[10rem] lg:text-[3.5rem] lg:font-[800] lg:pb-[2rem]
+  lg:pt-[13rem]  lg:ml-[15rem] lg:mr-[10rem] lg:text-[3.5rem] lg:font-[800] lg:pb-[2rem]
 }
 .play .play__free a{
   @apply bg-light py-[.8rem] px-[2rem] font-bold rounded-[5rem] text-center 
-  lg:mr-[37rem] lg:font-semibold
+  lg:mr-[42rem] lg:font-semibold hover:scale-[1.1]
 }
 .play .play__banner img{
-  @apply hidden lg:block lg:w-[20rem] 
+  @apply hidden lg:block lg:w-[15rem] lg:absolute lg:bottom-0 lg:h-[25rem] lg:ml-[15rem] lg:bg-light lg:pt-[4rem] lg:px-[1rem]
 }
 /* ----WHY SPOTIFY----- */
 .why .why__title{
-  @apply text-center text-[1.8rem] font-bold pb-[2rem]
+  @apply text-center text-[1.8rem] font-bold pb-[2rem] lg:py-[4rem] lg:text-[2.5rem]
+}
+.why .why__content{
+  @apply lg:flex lg:mx-[8rem]
+}
+.why .why__item{
+  @apply flex gap-[1rem] pb-[4rem] items-center lg:flex-col lg:gap-[0rem] lg:pb-[1rem]
+}
+.why .why__item img{
+  @apply w-[10rem] lg:w-[9rem] lg:pb-[1rem]
+}
+.why .why__item:nth-child(3) img{
+  @apply w-[8rem] lg:w-[9rem] 
+}
+.why .why__item .why__text{
+  @apply lg:text-center lg:pt-[2rem]
+}
+.why .why__item .why__text h1{
+  @apply font-[700] text-[1.2rem] pb-[1rem]
+}
+.why .why__item .why__text p{
+  @apply font-[500] lg:mx-[2rem]
+}
+.why .why__item:first-child p{
+  @apply lg:ml-[3rem]
+}
+.why .why__item:nth-child(3) p{
+  @apply lg:mx-[1rem]
+}
+/*-----PARTY------*/
+.made .made__section{
+  @apply pt-[5rem]
+}
+.made .made__cp{
+  @apply bg-[url('./img/bubbles-phone-mobile.svg')] bg-cover w-[100%] h-[400px] bg-center lg:hidden
+}
+.made .made__cp span{
+  @apply w-[2.5rem] h-[.3rem] block rounded-[2rem] bg-dark mx-[14rem] relative bottom-[4.5rem] z-[999]
+}
+.made .made__cp img{
+  @apply w-[230px] h-[425px] mx-[8rem] bg-light shadow-lg shadow-slate-600 border rounded-[2rem] relative px-[.5rem] pt-[3rem] pb-[2rem] translate-y-[-6rem]
+}
+.made .made__division{
+  @apply relative h-[78px] bg-gradient-to-b from-transparent to-[#b023c2] top-[-280px] mb-[-280px] block lg:hidden
+}
+.made .made__card{
+  @apply relative bg-gradient-to-b from-[#b023c2] to-[#620be6] text-center text-[2rem] font-[700] text-light lg:py-[6rem] lg:text-[3rem]
+}
+.made .made__card h1{
+  @apply pt-[3rem] 
+}
+.made .made__card h2{
+  @apply pb-[5rem] 
+}
+/*-----GOT QUESTIONS------*/
+.got{
+  @apply bg-light
+}
+.got__drop{
+  @apply lg:pb-[5rem]
+}
+.got .got__title h2{
+  @apply text-center text-[2rem] font-[700] pb-[2rem] lg:pb-[3rem]
+}
+.got .got__hover{
+  @apply flex items-center justify-between hover:bg-[hsl(206,6%,95%)] px-[1rem] hover:cursor-pointer lg:py-[1rem]
+}
+.got .got__hover.open{
+  @apply bg-[hsl(206,6%,95%)] 
+}
+.got .got__hover h1.open{
+  @apply underline
+}
+.got .got__item .got__hover h1{
+  @apply font-[700] text-[1.15rem] pb-[1rem] hover:underline 
+}
+.got__item i.open {
+  @apply rotate-[180deg] transition-all 
+}
+.got .got__item ul.open {
+  @apply max-h-[50rem] py-[.8rem] transition-all pb-[2rem] px-[1rem]
+}
+.got .got__item ul{
+  @apply font-[600] max-h-[0rem] overflow-hidden transition-all px-[1rem]
+}
+.got .got__item ul li h3{
+  @apply pb-[1rem]
+}
+.got .got__item ul li p span{
+  @apply text-primary
+}
+.got .got__item:nth-child(3) p{
+  @apply pt-[1rem]
+}
+.got .got__item:not(:last-child){
+  @apply border-b-2 
+}
+.got .got__item:not(:first-child){
+  @apply pt-[.2rem]
+}
+.got .got__item h1{
+  @apply pt-[1rem]
+}
+.got .got__item{
+  @apply lg:mx-[10rem]
+}
+/* -----READY----- */
+.ready{
+  @apply bg-gradient-to-tr from-[#b023c2] to-[#620be6] h-[380px] lg:bg-gradient-to-r
+}
+.ready .ready__wrapper{
+  @apply bg-[url(./img/lets-play.svg)] h-[100%] w-[90%] bg-cover absolute translate-y-[-18rem] lg:w-[100%]
+}
+.ready .ready__content {
+  @apply translate-y-[23rem] text-center  lg:text-center 
+}
+.ready .ready__content h1{
+  @apply text-[2.8rem] text-light font-[700] pb-[2rem]
+}
+.ready .ready__content a{
+  @apply bg-light py-[.8rem] px-[2rem] font-bold rounded-[5rem] text-center
 }
 }
 
