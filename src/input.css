@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  max-width: 130rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 1.5rem;
+@layer base {
+  .container {
+    @apply max-w-[130rem] px-[1.5rem] py-[1rem] mx-auto lg:py-[0rem];
+  }
 }
 
 @layer components {
@@ -115,10 +114,134 @@
     @apply text-light text-[1rem] bg-gray-500 
     py-[.8rem] px-[1rem] rounded-[5rem] hover:text-primary;
   }
+
+/* -----------PREMIUM-BANNER--------- */
+  .premium-banner{
+    @apply py-[5rem] lg:pt-[12rem] pb-[5rem];
+  }
+  .premium-banner .premium-banner_title{
+    @apply text-light mb-[3rem];
+  }
+  .premium-banner .premium-banner_title h1{
+    @apply text-[1.75rem] font-bold mb-[2rem] lg:text-[2.5rem];
+  }
+  .premium-banner .premium-banner_title p{
+    @apply text-[1.2rem] font-medium lg:text-[1.4rem];
+  }
+  .premium-banner .premium-banner_btn{
+    @apply flex flex-col text-light lg:items-center lg:flex-row lg:gap-[.5rem] lg:flex-wrap lg:w-[40rem] ;
+  }
+  .premium-banner .premium-banner_btn a:first-child{
+    @apply text-[1rem] font-bold text-center lg:mb-[2rem] hover:bg-dark hover:transform hover:scale-[1.07] lg:hover:scale-[1.05];
+  }
+  .premium-banner .premium-banner_btn a:nth-child(2){
+    @apply text-[1rem] font-bold text-center border-[2px] border-white mt-[.5rem] mb-[2.75rem] hover:transform hover:scale-[1.07] lg:hover:scale-[1.05] lg:mt-[0rem] lg:mb-[2rem];
+  }
+  .premium-banner .premium-banner_btn a:last-child{
+    @apply text-[.6rem] underline font-medium hover:bg-transparent;
+  }
+  .premium-banner .premium-banner_btn p{
+    @apply text-[.7rem];
+  }
+
+
+
+/* -----------MUSIC--------- */
+  .music{
+    @apply bg-light pt-[2rem] pb-[2rem] lg:py-[5rem];
+  }
+  .music .music_title h2{
+    @apply text-[1.8rem] font-bold items-center text-center mb-[3rem] lg:text-[2.5rem];
+  }
+  .music .music_item ul{
+    @apply flex flex-col flex-nowrap justify-between m-[auto] lg:flex-row lg:items-center;
+  }
+  .music .music_item ul li{
+    @apply flex gap-[1rem] text-left items-center lg:text-center mb-[3rem] lg:px-[2rem] lg:flex-col;
+  }
+  .music .music_item ul li img{
+    @apply w-[100px] h-[100px] justify-center inline-block lg:mx-[auto] lg:mb-[1.5rem] lg:w-[142px] lg:h-[142px];
+  }
+  .music .item_text h3{
+    @apply text-[1.2rem] font-bold items-center mb-[.5rem] lg:text-[1.3rem] ;
+  }
+
+
+
+/* -----------SUBS--------- */
+  .subs{
+    @apply bg-fade py-[3rem] lg:py-[5rem];
+  }
+  .subs .subs_title{
+    @apply text-center mb-[3rem];
+  }
+  .subs .subs_title h2{
+    @apply text-[2rem] text-center font-bold lg:text-[2.4rem];
+  }
+  .subs .subs_title p{
+    @apply text-[1rem] mb-[1rem];
+  }
+  .subs .subs_title ul{
+    @apply flex flex-row items-center justify-center;
+  }
+  .subs .subs_title ul li img{
+    @apply w-[23px];
+  }
+  .subs .subs_title ul li:first-child img{
+    @apply bg-light rounded-[.1rem] px-[.1rem]
+  }
+  .subs .subs_title ul li:nth-child(2) img{
+    @apply bg-light rounded-[.1rem] p-[.2rem]
+  }
+  .subs .subs_title ul li:not(last-child) img{
+    @apply mr-[1rem];
+  }
+  .subs .subs_item{
+    @apply flex flex-col gap-y-[1.5rem] items-center lg:grid lg:grid-cols-4 lg:justify-center lg:gap-[1rem];
+  }
+  .subs .subs_card{
+    @apply bg-light shadow-md rounded-[.5rem] p-[1.3rem] max-w-[100%] my-[0] mx-[auto] text-left lg:max-h-[39rem];
+  }
+  .subs .card_title h3{
+    @apply bg-brightblue text-[.8rem] text-light font-bold text-center rounded-[.2rem] max-w-[27%] p-[.2rem] mb-[.3rem] lg:max-w-[40%];
+  }
+  .subs .card_title h2{
+    @apply text-[1.6rem] font-bold;
+  }s
+  .subs .card_title p{
+    @apply text-[1.1rem] font-normal;
+  }
+  .subs .card_title span{
+    @apply w-[100%] h-[.05rem] bg-dark block my-[1.5rem];
+  }
+  .subs .card_check{
+    @apply flex flex-col mb-[1.5rem] lg:min-h-[14rem];
+  }
+  .subs .card_check table tr{
+    @apply flex items-start
+  }
+  .subs .card_check table tr td{
+    @apply mr-[.8rem];
+  }
+  .subs .card_check table tr td:first-child{
+    @apply text-[1.5rem] ;
+  }
+  .subs .card_check table tr td:last-child{
+    @apply w-[22.5rem] lg:w-[13.5rem];
+  }
+  .subs .card_btn{
+    @apply mb-[1rem] flex flex-col text-light text-[1rem] font-bold text-center rounded-[5rem] hover:bg-dark hover:transform hover:scale-[1.05];
+  }
+  .subs .card_terms a{
+    @apply underline;
+  }
+  .subs .card_terms p{
+    @apply text-[.7rem] lg:min-h-[15rem];
+  }
 }
 
 @layer utilities {
   .btn {
-    @apply inline-block py-[1rem] px-[1.5rem] border-[1px] border-red-400;
+    @apply inline-block py-[.8rem] px-[1.5rem] border-[1px] border-transparent rounded-[5rem];
   }
 }
